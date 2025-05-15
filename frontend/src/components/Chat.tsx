@@ -17,30 +17,27 @@ const Chat: React.FC = () => {
 
 
     const fetchMessages = async () => {
-        const res = await axios.get("http://localhost:3000/api/messages");
-        setMessages(res.data);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/messages`);
+      setMessages(res.data);
     };
 
-    
-
     const sendMessage = async () => {
-        if (!input.trim()) return;
+      if (!input.trim()) return;
 
-        setMessages(prev => [
+      setMessages(prev => [
         ...prev,
         { content: input, sender: 'user', timestamps: new Date().toISOString() }
       ]);
-      
-        setInput('');
-        await axios.post("http://localhost:3000/api/messages", {content: input});
-        fetchMessages();
-    }
+
+      setInput('');
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/messages`, { content: input });
+      fetchMessages();
+    };
 
     const deleteMessages = async () => {
-
-      await axios.delete("http://localhost:3000/api/messages");
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/messages`);
       fetchMessages();
-    }
+    };
 
     useEffect(() => {
       fetchMessages();

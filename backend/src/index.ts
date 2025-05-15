@@ -3,7 +3,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import {db} from './db';
 import messagesRouter from './routes/messages';
+import { initializeDatabase } from './initDataBase';
 
+initializeDatabase();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
