@@ -17,7 +17,10 @@ const Chat: React.FC = () => {
 
 
     const fetchMessages = async () => {
+      const route = `${import.meta.env.VITE_API_URL}/api/messages`;
+      console.log('📡 Fetching from:', route)
       const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/messages`);
+      
       setMessages(res.data);
     };
 
@@ -65,6 +68,9 @@ const Chat: React.FC = () => {
                 transition: "height 0.3s ease"
 
             }}>
+
+
+{console.log(messages)}
 
 {messages.map((msg, idx) => (
   
