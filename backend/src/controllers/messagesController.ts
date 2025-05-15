@@ -24,7 +24,7 @@ export const postMessage = async (req: Request, res: Response) => {
 };
 
 export const deleteMessages = async (req: Request, res: Response) => {
-    await db.query("TRUNCATE chatbotapp.messages;");
+    await db.query("TRUNCATE messages;");
 
     res.json("Mensajes eliminados correctamente");
 };
