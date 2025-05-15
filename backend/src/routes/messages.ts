@@ -8,5 +8,3 @@ messagesRouter.post('/messages', postMessage);
 messagesRouter.delete('/messages', deleteMessages);
 
 export default messagesRouter;
-
-

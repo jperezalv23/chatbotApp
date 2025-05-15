@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES6",                          // Output ES6 JavaScript
-    "module": "CommonJS",                    // Required for Node.js
-    "outDir": "dist",                        // Compiled .js files go here
-    "rootDir": "src",                        // Your .ts files live here
-    "strict": true,                          // Enable all strict type-checking
-    "esModuleInterop": true,                 // Allow default imports from CommonJS
+    "target": "ES6",                          
+    "module": "CommonJS",                    
+    "outDir": "dist",                        
+    "rootDir": "src",                        
+    "strict": true,                          
+    "esModuleInterop": true,                 
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

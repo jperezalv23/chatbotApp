@@ -10,8 +10,8 @@ export const initializeDatabase = async () => {
         timestamps DATETIME DEFAULT CURRENT_TIMESTAMP
       );
     `);
-    console.log('Table "messages" created.');
+    console.log('Tabla messages creada.');
   } catch (error) {
-    console.error('Error creating table:', error);
+    console.error(error);
   }
 };
