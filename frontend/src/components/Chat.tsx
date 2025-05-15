@@ -32,13 +32,13 @@ const Chat: React.FC = () => {
       ]);
       
         setInput('');
-        const res = await axios.post("http://localhost:3000/api/messages", {content: input});
+        await axios.post("http://localhost:3000/api/messages", {content: input});
         fetchMessages();
     }
 
     const deleteMessages = async () => {
 
-      const res = await axios.delete("http://localhost:3000/api/messages");
+      await axios.delete("http://localhost:3000/api/messages");
       fetchMessages();
     }
 
@@ -82,10 +82,14 @@ const Chat: React.FC = () => {
   >
     
 
-    <p style={{fontSize: "0.75rem",
-                color: "#aaa",
-                textAlign: "center",
-                marginBottom: "5px",}}> {new Date(msg.timestamps).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+    <p style={{
+  fontSize: "0.75rem",
+  color: "#aaa",
+  textAlign: "center",
+  marginBottom: "5px",
+  }}>
+    {msg.timestamps ? new Date(msg.timestamps).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ""}
+  </p>
     
     <div
       style={{
